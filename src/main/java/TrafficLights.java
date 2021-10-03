@@ -1,34 +1,18 @@
 public class TrafficLights {
 
-    private RedLight redLight = new RedLight();
-    private GreenLight greenLight = new GreenLight();
-    private YellowLight yellowLight = new YellowLight();
-
     private Light lightColor;
 
     public TrafficLights() {
-        this.lightColor = redLight;
+        this.lightColor = new RedLight(this);
     }
 
-    public Light getLightColor() {
-        return lightColor;
-    }
-
-    public void setLightColor(String color) {
-        switch (color) {
-            case "red":
-                this.lightColor = redLight;
-            case "yellow":
-                this.lightColor = yellowLight;
-            case "green":
-                this.lightColor = greenLight;
-        }
-
+    public void setLightColor(Light lightColor) {
+        this.lightColor = lightColor;
     }
 
     public void orchestrateTraffic(){
 
-        lightColor.orchestrateTraffic();
+        lightColor.getTrafficInformation();
 
     }
 

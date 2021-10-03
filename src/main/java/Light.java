@@ -1,5 +1,11 @@
-public interface Light {
+public abstract class Light {
+        protected TrafficLights trafficLights;
 
-    void orchestrateTraffic();
+        public Light(TrafficLights trafficLights) {
+                this.trafficLights = trafficLights;
+        }
 
-}
+
+        abstract TrafficInformation getTrafficInformation();
+
+        }
